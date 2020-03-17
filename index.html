@@ -119,7 +119,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/11/new-blog/">new blog</a>
+      <a class="article-title" href="/2020/02/11/new-blog/">docker reboot</a>
     </h1>
   
 
@@ -127,7 +127,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>reboot 后 Docker服务及容器自动启动设置</p>
+<p>重启reboot操作系统后，发现docker 服务未启动，容器也未启动，天生反骨，怎么才能重启后自动启动呢</p>
+<p>解决问题两个问题：</p>
+<p>1、docker服务自动重启设置<br>systemctl enable docker.service</p>
+<p>2、docker容器自动启动设置</p>
+<p>docker ps -a</p>
+<p>使用一下命令对镜像重启：docker restart imageid</p>
+<p>i<br>在运行docker容器时可以加如下参数来保证每次docker服务重启后容器也自动重启：</p>
+<p>docker run –restart=always<br>如果已经启动了则可以使用如下命令：</p>
+<p>docker update –restart=always <CONTAINER ID><br>重启系统后</p>
+<p>docker  ps -a </p>
+
       
     </div>
     <footer class="article-footer">
@@ -190,7 +201,7 @@
           </li>
         
           <li>
-            <a href="/2020/02/11/new-blog/">new blog</a>
+            <a href="/2020/02/11/new-blog/">docker reboot</a>
           </li>
         
       </ul>
